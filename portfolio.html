@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjeev Bensal — Software Engineer</title>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="page-transition"></div>
+<canvas id="webgl-bg"></canvas>
+
+<nav id="nav">
+  <a href="#" class="nav-logo" onclick="navigate('home')"><span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="navigate('home')">Home</a></li>
+    <li><a href="#" onclick="navigate('work')">Work</a></li>
+    <li><a href="#" onclick="navigate('about')">About</a></li>
+    <li><a href="#" onclick="navigate('contact')">Contact</a></li>
+  </ul>
+  <div class="nav-avail"><div class="avail-dot"></div> Portfolio</div>
+</nav>
+
+<!-- ══ HOME ══ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-tag">Software Engineer & Developer</div>
+    <h1 class="hero-name">Sanjeev<br><em>Bensal.</em></h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">Building software that transforms ideas into <strong>intuitive, reliable, and impactful</strong> digital experiences.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary" onclick="navigate('work')">See My Work →</a>
+        <a href="#" class="btn-ghost" onclick="navigate('contact')">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-vert"></div>
+      <span class="scroll-label">Scroll</span>
+    </div>
+  </section>
+
+  <!-- Featured work preview -->
+  <section style="padding-top:0">
+    <div class="section-tag reveal">Featured Work</div>
+    <h2 class="section-title reveal reveal-delay-1">Selected<br>projects.</h2>
+    <div class="work-grid reveal reveal-delay-2">
+      <div class="work-item large" onclick="navigate('work')">
+        <div class="work-thumb"><div class="work-thumb-bg" style="background: url('images/Full Stack Booking Platform/Full Stack Booking Platform.png') center/cover no-repeat;"></div><div class="work-thumb-overlay"><div class="work-view">View Case Study ↗</div></div></div>
+        <div class="work-info">
+          <div class="work-category">Web</div>
+          <div class="work-title">Full Stack Booking Platform</div>
+          <div class="work-desc">Engineered Sunrise Haven, a full-stack resort booking platform powered by FastAPI, PostgreSQL, and Vercel, featuring real-time availability filtering, JWT-secured admin controls, and Cloudinary-optimized media pipelines.</div>
+          <div class="work-meta"><span class="work-tag">Python</span><span class="work-tag">SQL</span><span class="work-tag">HTML</span><span class="work-tag">CSS</span><span class="work-tag">JavaScript</span></div>
+        </div>
+      </div>
+      <div class="work-item medium" onclick="navigate('work')">
+        <div class="work-thumb"><div class="work-thumb-bg" style="background: url('images/Sales Analytics Dashboard/Sales Analytics Dashboard.png') center/cover no-repeat;"></div><div class="work-thumb-overlay"><div class="work-view">View Case Study ↗</div></div></div>
+        <div class="work-info">
+          <div class="work-category">Data Visualization</div>
+          <div class="work-title">Sales Analytics Dashboard</div>
+          <div class="work-desc">Engineered an end-to-end data analytics pipeline using Python (Pandas) and SQL to integrate, process, and analyze large datasets. Built an interactive Power BI dashboard with custom DAX measures and dynamic filters to visualize KPIs and business trends.</div>
+          <div class="work-meta"><span class="work-tag">Python</span><span class="work-tag">SQL</span><span class="work-tag">Power BI</span><span class="work-tag">Excel</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee strip -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Creative Development ✦ UI/UX Design ✦ Backend Architecture ✦ Full Stack ✦ AI ✦ Website ✦ Creative Development ✦ UI Design ✦ Motion ✦ Branding ✦ Data Viz ✦ Web Apps ✦</span>
+    </div>
+  </div>
+
+  <!-- About teaser -->
+  <section>
+    <div class="about-strip reveal">
+      <div class="about-photo">
+        <img src="images/whole.png" alt="Sanjeev's Profile Photo" class="profile-img">
+        <div class="photo-badge">
+          <div class="badge-num">3RD</div>
+          <div class="badge-label">Computer Science</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-tag">About Me</div>
+        <h2 class="section-title section-title-spaced">I turn ideas into<br>living products.</h2>
+        <p class="about-bio">I'm a <strong>Computer Science student</strong> with hands-on experience in full-stack development, data analytics, and IT support. Skilled in building web applications, developing data-driven dashboards, and solving technical problems using Python, Java, SQL, and modern development tools. Passionate about creating reliable software and continuously expanding my technical skills.</p>
+        <div class="skills-list">
+          <span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">Excel</span>
+          <span class="skill-tag">Kotlin</span><span class="skill-tag">HTML</span><span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">CSS</span><span class="skill-tag">Git</span><span class="skill-tag">Bash</span>
+          <span class="skill-tag">React</span><span class="skill-tag">Object-Oriented Programming</span><span class="skill-tag">Data Structures</span>
+          <span class="skill-tag">Algorithms</span><span class="skill-tag">Client-Server Architecture</span><span class="skill-tag">Networking</span>
+          <span class="skill-tag">Statistics & Probability</span>
+        </div>
+        <div class="about-links">
+          <a href="#" class="btn-primary" onclick="navigate('about')">Full Bio →</a>
+          <a href="#" class="btn-ghost" onclick="navigate('contact')">Work Together</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-copy">© 2025 Sanjeev Bensal</span>
+    <div class="social-row">
+      <a class="social-link" href="https://www.linkedin.com/in/sanjeev-bensal-393077397/">in</a>
+      <a class="social-link" href="https://github.com/SanjeevBensal">gh</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ══ WORK ══ -->
+<div class="page" id="page-work">
+  <section class="section-top-offset">
+    <div class="section-tag reveal">Portfolio</div>
+    <h1 class="section-title reveal reveal-delay-1">All Work</h1>
+    <p class="work-intro reveal reveal-delay-2">A full record of projects across design, development, and everything in between.</p>
+    <div class="work-grid reveal reveal-delay-3">
+
+      <!-- Project 1: Full Stack Booking Platform -->
+      <div class="work-item large" tabindex="0" 
+           data-category="Web" 
+           data-title="Full Stack Booking Platform" 
+           data-description="Engineered Sunrise Haven, a full-stack resort booking platform powered by FastAPI, PostgreSQL, and Vercel, featuring real-time availability filtering, JWT-secured admin controls, and Cloudinary-optimized media pipelines." 
+           data-role="Full Stack Developer" 
+           data-stack="Python · SQL · HTML · CSS · JavaScript" 
+           data-github="https://github.com/SanjeevBensal/sunrise-haven" 
+           data-website="https://sunrise-haven.vercel.app/" 
+           data-images="images/Full Stack Booking Platform/Full Stack Booking Platform.png | images/Full Stack Booking Platform/sunrisehaven.png |  images/Full Stack Booking Platform/sh (6).png | images/Full Stack Booking Platform/sh (5).png | images/Full Stack Booking Platform/sh (4).png | images/Full Stack Booking Platform/sh (3).png | images/Full Stack Booking Platform/sh (2).png | images/Full Stack Booking Platform/sh (1).png">
+        <div class="work-thumb">
+          <div class="work-thumb-bg" style="background: url('images/Full Stack Booking Platform/Full Stack Booking Platform.png ') center/cover no-repeat;"></div>
+          <div class="work-thumb-overlay"><div class="work-view">View Case Study ↗</div></div>
+        </div>
+        <div class="work-info">
+          <div class="work-category">Web</div>
+          <div class="work-title">Full Stack Booking Platform</div>
+          <div class="work-desc">Engineered Sunrise Haven, a full-stack resort booking platform powered by FastAPI, PostgreSQL, and Vercel, featuring real-time availability filtering, JWT-secured admin controls, and Cloudinary-optimized media pipelines.</div>
+          <div class="work-meta">
+            <span class="work-tag">Python</span>
+            <span class="work-tag">SQL</span>
+            <span class="work-tag">HTML</span>
+            <span class="work-tag">CSS</span>
+            <span class="work-tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Sales Analytics Dashboard -->
+      <div class="work-item medium" tabindex="0" 
+           data-category="Data Visualization" 
+           data-title="Sales Analytics Dashboard" 
+           data-description="Engineered an end-to-end data analytics pipeline using Python (Pandas) and SQL to integrate, process, and analyze large datasets. Built an interactive Power BI dashboard with custom DAX measures and dynamic filters to visualize KPIs and business trends." 
+           data-role="Data Analyst & Developer" 
+           data-stack="Python · SQL · Power BI · Excel" 
+           data-github="https://github.com/SanjeevBensal/AnnualizedRollingSales" 
+           data-website="https://drive.google.com/drive/folders/1CNg4Un8W1xpayosO8OGUYC3IkY85JSx_" 
+           data-images="images/Sales Analytics Dashboard/Sales Analytics Dashboard.png | images/Sales Analytics Dashboard/SAD (1).png | images/Sales Analytics Dashboard/SAD (2).png">
+        <div class="work-thumb">
+          <div class="work-thumb-bg" style="background: url('images/Sales Analytics Dashboard/Sales Analytics Dashboard.png') center/cover no-repeat;"></div>
+          <div class="work-thumb-overlay"><div class="work-view">View Case Study ↗</div></div>
+        </div>
+        <div class="work-info">
+          <div class="work-category">Data Visualization</div>
+          <div class="work-title">Sales Analytics Dashboard</div>
+          <div class="work-desc">Engineered an end-to-end data analytics pipeline using Python (Pandas) and SQL to integrate, process, and analyze large datasets. Built an interactive Power BI dashboard with custom DAX measures and dynamic filters to visualize KPIs and business trends.</div>
+          <div class="work-meta">
+            <span class="work-tag">Python</span>
+            <span class="work-tag">SQL</span>
+            <span class="work-tag">Power BI</span>
+            <span class="work-tag">Excel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Template (Fill with your next project) -->
+      <div class="work-item half" tabindex="0" 
+           data-category="Software Engineering" 
+           data-title="Project 3 Title" 
+           data-description="A brief description of your third project." 
+           data-role="Software Developer" 
+           data-stack="Java · Spring Boot" 
+           data-github="https://github.com/SanjeevBensal/BackpackSlouchDetection" 
+           data-images="images/IoT Posture Monitoring System/IoT Posture Monitoring System.png | images/IoT Posture Monitoring System/backpack.jpg | images/IoT Posture Monitoring System/Iot.png">
+        <div class="work-thumb">
+          <div class="work-thumb-bg" style="background: url('images/IoT Posture Monitoring System/IoT Posture Monitoring System.png') center/cover no-repeat;"></div>
+          <div class="work-thumb-overlay"><div class="work-view">View Case Study ↗</div></div>
+        </div>
+        <div class="work-info">
+          <div class="work-category">Iot Device</div>
+          <div class="work-title">IoT Posture Monitoring System</div>
+          <div class="work-desc">Developed an IoT-based posture monitoring system using Arduino and Android. Implemented real-time haptic feedback to help prevent musculoskeletal strain</div>
+          <div class="work-meta">
+            <span class="work-tag">Kotlin</span>
+            <span class="work-tag">Arduino</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Template (Fill with your next project) -->
+      <div class="work-item half" tabindex="0" 
+           data-category="Web Application" 
+           data-title="Project 4 Title" 
+           data-description="A brief description of your fourth project." 
+           data-role="Front-end Developer" 
+           data-stack="React · Node.js" 
+           data-github="https://github.com/SanjeevBensal/AnimalShelterApplication" 
+           data-images="images/Distributed Animal Adoption System/Distributed Animal Adoption System.png |images/Distributed Animal Adoption System/AA (1).png | images/Distributed Animal Adoption System/AA (2).png">
+        <div class="work-thumb">
+          <div class="work-thumb-bg" style="background: url('images/Distributed Animal Adoption System/Distributed Animal Adoption System.png') center/cover no-repeat;"></div>
+          <div class="work-thumb-overlay"><div class="work-view">View Case Study ↗</div></div>
+        </div>
+        <div class="work-info">
+          <div class="work-category">Application</div>
+          <div class="work-title">Distributed Animal Adoption System</div>
+          <div class="work-desc">Built a distributed client-server application using Java RMI for real-time remote communication. Implemented full CRUD operations and search functionality using a JSON-based data storage system</div>
+          <div class="work-meta">
+            <span class="work-tag">Java</span>
+            <span class="work-tag">RMI</span>
+          </div>
+        </div>
+      </div>
+      <div class="work-item half" tabindex="0" 
+           data-category="Web Application" 
+           data-title="Project 4 Title" 
+           data-description="A brief description of your fourth project." 
+           data-role="Front-end Developer" 
+           data-stack="React · Node.js" 
+           data-github="https://github.com/SanjeevBensal/911reports" 
+           data-website="https://drive.google.com/drive/folders/1OldCTMAYEcDkqH2z5lZEvPMfCAimiAhj" 
+           data-images="images/911 Emergency Analytics Dashboard/911 Emergency Analytics Dashboard.png | images/911 Emergency Analytics Dashboard/911 (1).png | images/911 Emergency Analytics Dashboard/911 (2).png | images/911 Emergency Analytics Dashboard/911 (3).png ">
+        <div class="work-thumb">
+          <div class="work-thumb-bg" style="background: url('images/911 Emergency Analytics Dashboard/911 Emergency Analytics Dashboard.png') center/cover no-repeat;"></div>
+          <div class="work-thumb-overlay"><div class="work-view">View Case Study ↗</div></div>
+        </div>
+        <div class="work-info">
+          <div class="work-category">Data Visualization</div>
+          <div class="work-title">911 Emergency Analytics Dashboard</div>
+          <div class="work-desc">Cleaned and transformed emergency dispatch data using Python (Pandas). Standardized records, filtered incomplete data, and extracted geographic zones. Prepared datasets for interactive Tableau dashboards and visualizations.</div>
+          <div class="work-meta">
+            <span class="work-tag">Python</span>
+            <span class="work-tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <footer>
+    <span class="footer-copy">© 2025 Sanjeev Bensal</span>
+    <div class="social-row">
+      <a class="social-link" href="https://www.linkedin.com/in/sanjeev-bensal-393077397/">in</a>
+      <a class="social-link" href="https://github.com/SanjeevBensal">gh</a>
+    </div>
+  </footer>
+</div>
+
+<div class="modal-overlay" id="project-modal-overlay">
+  <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <button class="modal-close" id="project-modal-close" aria-label="Close project details">×</button>
+    <div class="modal-hero">
+      <div class="modal-category" id="project-modal-category">Project</div>
+      <h3 class="modal-title" id="project-modal-title">Project title</h3>
+      <p class="modal-summary" id="project-modal-summary">Project summary</p>
+    </div>
+    <div class="modal-gallery-shell">
+      <button class="gallery-arrow prev" id="gallery-prev" aria-label="Previous image">←</button>
+      <div class="project-gallery">
+        <img id="project-modal-image" src="" alt="Project preview">
+      </div>
+      <button class="gallery-arrow next" id="gallery-next" aria-label="Next image">→</button>
+      <div class="gallery-counter" id="gallery-counter">1 / 1</div>
+    </div>
+    <div class="modal-grid">
+      <div class="modal-block">
+        <div class="modal-label">Role</div>
+        <div class="modal-value" id="project-modal-role">Creative developer</div>
+      </div>
+      <div class="modal-block">
+        <div class="modal-label">Languages / Tools</div>
+        <div class="modal-value" id="project-modal-stack">React · TypeScript</div>
+      </div>
+    </div>
+    <div class="modal-links">
+      <a href="#" id="project-modal-github" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="#" id="project-modal-website" target="_blank" rel="noreferrer">Website</a>
+    </div>
+  </div>
+</div>
+
+<div class="cert-proof-overlay" id="cert-proof-overlay">
+  <div class="cert-proof-modal" role="dialog" aria-modal="true" aria-labelledby="cert-proof-title">
+    <button class="modal-close" id="cert-proof-close" aria-label="Close certificate proof">×</button>
+    <div class="modal-hero cert-proof-hero">
+      <div class="modal-category">Certificate Proof</div>
+      <h3 class="modal-title" id="cert-proof-title">Certificate</h3>
+    </div>
+    <div class="cert-proof-shell">
+      <img id="cert-proof-image" src="" alt="Certificate proof image">
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<div class="page" id="page-about">
+  <section class="section-top-offset">
+    <div class="section-tag reveal">About</div>
+    <h1 class="section-title reveal reveal-delay-1">The full<br>story.</h1>
+    <div class="about-strip reveal reveal-delay-2 about-strip-offset">
+      <div class="about-photo">
+        <img src="images/whole.png" alt="About Me" class="page-about-img">
+        <div class="photo-badge"><div class="badge-num">32</div><div class="badge-label">Projects shipped</div></div>
+      </div>
+      <div>
+        <p class="about-bio" style="margin-top:0">I am a Computer Science student at Saint Louis University with a passion for software engineering and full-stack development. I enjoy building practical applications that solve real-world problems while continuously improving my technical skills.<br>
+          <br>I have hands-on experience in <strong>web development, data analytics, and IT support </strong>through my internship and independent projects. My work includes building full-stack applications, developing data dashboards, and creating IoT-based systems using modern technologies.<br>
+          <br>I am eager to learn, take on new challenges, and build software that creates meaningful impact. My goal is to grow into a software engineer who develops reliable, scalable, and user-focused solutions.</p>
+        <div class="skills-list">
+          <span class="skill-tag">React / Next.js</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Figma</span>
+          <span class="skill-tag">GSAP / Framer Motion</span><span class="skill-tag">Three.js / WebGL</span><span class="skill-tag">D3.js</span>
+          <span class="skill-tag">Node.js / Express</span><span class="skill-tag">After Effects</span><span class="skill-tag">Glyphs</span>
+          <span class="skill-tag">PostgreSQL</span><span class="skill-tag">Tailwind CSS</span><span class="skill-tag">Brand Identity</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-certs-offset">
+    <div class="section-tag reveal">Certifications</div>
+    <h2 class="section-title reveal reveal-delay-1">Credentials & training.</h2>
+    <div class="certs-grid reveal reveal-delay-2">
+      <button class="cert-card" tabindex="0" data-proof="images/certifications/nc2 cert.png" data-cert-title="Setting Up Computer Networks">
+        <div class="cert-title">Setting Up Computer Networks</div>
+        <div class="cert-meta">TESDA NC 2 • 2023</div>
+        <p class="cert-desc">certification in installing, configuring, testing, and troubleshooting computer networks, including network devices, cabling, IP addressing, and basic network security.</p>
+      </button>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="section-tag reveal">.</div>
+    <h2 class="section-title reveal reveal-delay-1">Where I've been.</h2>
+    <div class="exp-list reveal reveal-delay-2">
+      <div class="exp-row"><div class="exp-year">2024 — Now</div><div><div class="exp-role">Computer Science College Student</div><div class="exp-company">Saint Louis University</div><div class="exp-desc"></div></div></div>
+      <div class="exp-row"><div class="exp-year">2022 — 2024</div><div><div class="exp-role">Information Communication and Technology Highschool Student</div><div class="exp-company">University of Baguio City</div><div class="exp-desc"></div></div></div>
+    </div>
+  </section>
+
+  <footer><span class="footer-copy">© 2025 Sanjeev Bensal</span><div class="social-row"><a class="social-link" href="https://www.linkedin.com/in/sanjeev-bensal-393077397/">in</a><a class="social-link" href="https://github.com/SanjeevBensal">gh</a></div></footer>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<div class="page" id="page-contact">
+  <section class="section-top-offset">
+    <div class="section-tag reveal">Contact</div>
+    <div class="contact-split reveal reveal-delay-1">
+      <div class="contact-left">
+        
+        <h1 class="contact-big">Let's make<br>something<br><span>great.</span></h1>
+        <p class="contact-sub">Reach Out!</p>
+        <div class="contact-channels">
+          <a href="mailto:sanjeevbensal7215@gmail.com" class="contact-channel">
+            <div class="ch-icon">✉</div>
+            <div><div class="ch-label">Email</div><div class="ch-value">sanjeevbensal7215@gmail.com</div></div>
+            <div class="ch-arrow">→</div>
+          </a>
+          <a href="https://www.linkedin.com/in/sanjeev-bensal-393077397/" target="_blank" rel="noreferrer" class="contact-channel">
+            <div class="ch-icon">in</div>
+            <div><div class="ch-label">LinkedIn</div><div class="ch-value">https://www.linkedin.com/in/sanjeev-bensal-393077397/</div></div>
+            <div class="ch-arrow">→</div>
+          </a>
+          <a href="https://github.com/SanjeevBensal" target="_blank" rel="noreferrer" class="contact-channel">
+            <div class="ch-icon">gh</div>
+            <div><div class="ch-label">GitHub</div><div class="ch-value">https://github.com/SanjeevBensal</div></div>
+            <div class="ch-arrow">→</div>
+          </a>
+          <a href="https://drive.google.com/file/d/1GBNfccjvWBhfn-th7torYxDQuNeZCAtW/view?usp=sharing" target="_blank" rel="noreferrer" class="contact-channel">
+            <div class="ch-icon">📄</div>
+            <div><div class="ch-label">Résumé</div><div class="ch-value">PDF</div></div>
+            <div class="ch-arrow">→</div>
+          </a>
+        </div>
+      </div>
+      <form id="contact-form" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="access_key" value="a9349739-405a-4616-9639-46ff780008f2">
+        <div class="form-group">
+          <!-- Added name="name" and required -->
+          <input class="form-input" type="text" placeholder=" " id="f-name" name="name" required>
+          <label class="form-label" for="f-name">Your Name</label>
+        </div>
+        
+        <div class="form-group">
+          <!-- Added name="email" and required -->
+          <input class="form-input" type="email" placeholder=" " id="f-email" name="email" required>
+          <label class="form-label" for="f-email">Email Address</label>
+        </div>
+        
+        <div class="form-group">
+          <!-- Added id="f-message", name="message", and required -->
+          <textarea class="form-textarea" id="f-message" name="message" placeholder="Tell me about your project — scope, timeline, goals..." required></textarea>
+        </div>
+        
+        <!-- Changed to type="submit" and removed the inline onclick since the form handles it -->
+        <button type="submit" class="submit-btn">Send Message →</button>
+      </form>
+    </div>
+  </section>
+  <footer><span class="footer-copy">© 2025 Sanjeev Bensal</span><div class="social-row"><a class="social-link" href="https://www.linkedin.com/in/sanjeev-bensal-393077397/">in</a><a class="social-link" href="https://github.com/SanjeevBensal">gh</a></div></footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
