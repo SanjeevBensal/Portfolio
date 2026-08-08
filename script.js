@@ -57,6 +57,11 @@ const certProofOverlay = document.getElementById('cert-proof-overlay');
 const certProofCloseBtn = document.getElementById('cert-proof-close');
 const certProofTitle = document.getElementById('cert-proof-title');
 const certProofImage = document.getElementById('cert-proof-image');
+const certProofImageShell = document.getElementById('cert-proof-image-shell');
+const certProofPdfShell = document.getElementById('cert-proof-pdf-shell');
+const certProofPdf = document.getElementById('cert-proof-pdf');
+const certProofActions = document.getElementById('cert-proof-actions');
+const certProofDrive = document.getElementById('cert-proof-drive');
 
 let currentProjectImages = [];
 let currentProjectImageIndex = 0;
@@ -117,15 +122,54 @@ function closeProjectModal(){
 }
 
 function openCertProof(card){
-  if (!certProofOverlay || !certProofTitle || !certProofImage) return;
+  if (!certProofOverlay || !certProofTitle) return;
+
+  const certType = (card.dataset.certType || 'image').toLowerCase();
   certProofTitle.textContent = card.dataset.certTitle || 'Certificate';
-  certProofImage.src = card.dataset.proof || '';
+
+  if (certType === 'pdf') {
+    if (certProofPdf && certProofPdfShell) {
+      certProofPdf.src = card.dataset.pdfUrl || '';
+      certProofPdfShell.style.display = 'block';
+    }
+
+    if (certProofImageShell && certProofImage) {
+      certProofImageShell.style.display = 'none';
+      certProofImage.src = '';
+    }
+
+    if (certProofActions && certProofDrive) {
+      certProofDrive.href = card.dataset.driveUrl || '';
+      certProofDrive.textContent = 'View full PDF on Google Drive';
+      certProofActions.style.display = 'flex';
+    }
+  } else {
+    if (certProofImage && certProofImageShell) {
+      certProofImage.src = card.dataset.proof || '';
+      certProofImageShell.style.display = 'block';
+    }
+
+    if (certProofPdf && certProofPdfShell) {
+      certProofPdf.src = '';
+      certProofPdfShell.style.display = 'none';
+    }
+
+    if (certProofActions && certProofDrive) {
+      certProofActions.style.display = 'none';
+    }
+  }
+
   certProofOverlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
 function closeCertProof(){
   if (!certProofOverlay) return;
+  if (certProofPdf) certProofPdf.src = '';
+  if (certProofImage) certProofImage.src = '';
+  if (certProofImageShell) certProofImageShell.style.display = 'none';
+  if (certProofPdfShell) certProofPdfShell.style.display = 'none';
+  if (certProofActions) certProofActions.style.display = 'none';
   certProofOverlay.classList.remove('open');
   document.body.style.overflow = '';
 }

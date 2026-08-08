@@ -301,7 +301,15 @@
       <h3 class="modal-title" id="cert-proof-title">Certificate</h3>
     </div>
     <div class="cert-proof-shell">
-      <img id="cert-proof-image" src="" alt="Certificate proof image">
+      <div class="cert-proof-pdf-shell" id="cert-proof-pdf-shell">
+        <iframe id="cert-proof-pdf" title="Certificate PDF proof" src="" loading="lazy"></iframe>
+      </div>
+      <div class="cert-proof-image-shell" id="cert-proof-image-shell">
+        <img id="cert-proof-image" src="" alt="Certificate proof image">
+      </div>
+    </div>
+    <div class="cert-proof-actions" id="cert-proof-actions">
+      <a id="cert-proof-drive" class="modal-link-button" href="" target="_blank" rel="noreferrer">View full PDF on Google Drive</a>
     </div>
   </div>
 </div>
@@ -334,7 +342,14 @@
     <div class="section-tag reveal">Certifications</div>
     <h2 class="section-title reveal reveal-delay-1">Credentials & training.</h2>
     <div class="certs-grid reveal reveal-delay-2">
-      <button class="cert-card" tabindex="0" data-proof="images/certifications/nc2 cert.png" data-cert-title="Setting Up Computer Networks">
+      <button class="cert-card" tabindex="0" data-cert-type="pdf" data-pdf-url="https://drive.google.com/file/d/1iLWCM-DHITVusBZ5n3KI9XPFrBWNRUOB/preview" data-drive-url="https://drive.google.com/file/d/1iLWCM-DHITVusBZ5n3KI9XPFrBWNRUOB/view?usp=sharing" data-cert-title="Smart City Command and Control Center">
+        <div class="cert-title">Smart City Command and Control Center</div>
+        <div class="cert-meta">IT Helpdesk intern • 2025</div>
+        <p class="cert-desc">Completed work immersion at the Smart City Command Center, gaining hands-on experience in networking, data management, CCTV systems, resolved technical issues, and emergency dispatch operations.</p>
+      </button>
+    </div>
+    <div class="certs-grid reveal reveal-delay-2">
+      <button class="cert-card" tabindex="0" data-cert-type="image" data-proof="images/certifications/nc2 cert.png" data-cert-title="Setting Up Computer Networks">
         <div class="cert-title">Setting Up Computer Networks</div>
         <div class="cert-meta">TESDA NC 2 • 2023</div>
         <p class="cert-desc">certification in installing, configuring, testing, and troubleshooting computer networks, including network devices, cabling, IP addressing, and basic network security.</p>

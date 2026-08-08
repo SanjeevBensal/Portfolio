@@ -125,10 +125,16 @@ section > * { max-width:100%; }
 
 .cert-proof-overlay { position:fixed; inset:0; background:rgba(3,3,4,0.78); backdrop-filter:blur(10px); display:flex; align-items:center; justify-content:center; padding:24px; z-index:1200; opacity:0; pointer-events:none; transition:opacity .25s var(--ease-out); }
 .cert-proof-overlay.open { opacity:1; pointer-events:auto; }
-.cert-proof-modal { width:min(720px,100%); background:var(--dark); border:1px solid var(--border); border-radius:18px; padding:28px; position:relative; box-shadow:0 30px 100px rgba(0,0,0,0.55); transform:translateY(12px) scale(.98); transition:transform .25s var(--ease-out); }
+.cert-proof-modal { width:min(820px,100%); background:var(--dark); border:1px solid var(--border); border-radius:18px; padding:28px; position:relative; box-shadow:0 30px 100px rgba(0,0,0,0.55); transform:translateY(12px) scale(.98); transition:transform .25s var(--ease-out); max-height:calc(100vh - 48px); overflow:auto; }
 .cert-proof-overlay.open .cert-proof-modal { transform:translateY(0) scale(1); }
 .cert-proof-shell { border-radius:14px; overflow:hidden; border:1px solid var(--border); background:var(--dark2); }
-.cert-proof-shell img { width:100%; max-height:70vh; object-fit:contain; display:block; background:#0c0c0f; }
+.cert-proof-pdf-shell { display:none; min-height:min(70vh, 720px); }
+.cert-proof-pdf-shell iframe { width:100%; min-height:min(70vh, 720px); height:70vh; border:0; display:block; background:#fff; }
+.cert-proof-image-shell { display:none; }
+.cert-proof-image-shell img { width:100%; max-height:70vh; object-fit:contain; display:block; background:#0c0c0f; }
+.cert-proof-actions { margin-top:1rem; display:flex; justify-content:flex-end; align-items:center; }
+.modal-link-button { display:inline-flex; align-items:center; justify-content:center; padding:0.625rem 1rem; border-radius:999px; border:1px solid var(--border); background:var(--surface); color:var(--text-primary); text-decoration:none; font-size:0.75rem; letter-spacing:0.08em; transition:border-color .2s,color .2s,background .2s; }
+.modal-link-button:hover { border-color:var(--accent); color:var(--accent); background:var(--accent-dim); }
 
 /* Work grid */
 .work-grid { display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:1rem; margin-top:clamp(2rem, 4vw, 3rem); }
